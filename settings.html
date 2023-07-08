@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>BlockSecureSafe - Settings</title>
+  <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-left">
+      <img src="images/icon_big.jpg" alt="Application Icon" class="app-icon">
+      <h1 class="app-name">BlockSecureSafe
+        <small class="secondary">(Beta)</small>
+      </h1>
+    </div>
+    <div class="header-right">
+      <p class="developer">Developed by JW Limited</p>
+    </div>
+  </header>
+  <div class="container">
+    
+
+    <div class="tab-bar">
+      <div class="tab" data-target="tab"></div>
+      <div class="tab active" data-target="general-tab">General</div>
+      <div class="tab" data-target="privacy-tab">Privacy</div>
+      <div class="tab" data-target="about-tab">About</div>
+      <div class="tab" data-target="tab"></div>
+    </div>
+    
+    <div class="tab-content">
+        <div id="about-tab" class="tab-pane">
+            <h2>About
+              <div class="content">
+                <p id="space" class="space">
+                  space
+                </p>
+              </div>
+            </h2>
+                <div class="author-info">
+                  <img src="images/icon_big.jpg" alt="Company Icon" class="company-icon">
+                  <p>Version: 1.2.0</p>
+                  <p>Author: Joey West</p>
+                  <p>Company: JW Limited</p>
+                  <p>Made with LOVE in Germany</p>
+                </div>
+              </div>
+        <div id="general-tab" class="tab-pane active">
+        <h2>General Settings
+            <div class="content">
+                <p id="space" class="space">
+                        space
+                </p>
+                <p class="developer">Youre Data</p>
+                <div class="chart-container">
+                  <canvas id="chartCanvas" class="chart-canvas"></canvas>
+                </div>
+          </div>
+         </h2>
+         <p id="space" class="space">
+          space
+          </p>
+          <div class="table">
+            <div class="setting">
+              <h3>Block Social Media Tracking
+                <p class="developer">
+                    Blocking social media tracking can help protect your privacy and security online, as it prevents the websites.
+                </p>
+              </h3>
+              <div class="switch">
+                <label class="switch">
+                  <input type="checkbox" id="blockSozialMediaTracking" name="blockSozialMediaTracking">
+                  <span class="slider"></span>
+                </label>
+              </div>
+            </div>
+            <div class="setting">
+              <h3>Block Third-Party Cookies
+                <p>
+                    This option will block all third party Cookies that are used for tracking purposes.
+                </p>
+              </h3>
+              
+              <div class="switch">
+                <label class="switch">
+                  <input type="checkbox" id="blockThirdPartyCookies" name="blockThirdPartyCookies">
+                  <span class="slider"></span>
+                </label>
+              </div>
+          </div>
+                
+          <div class="setting">
+            <h3>Block Tracking Scripts
+                <p>
+                    This option will block all third party scripts that are used for tracking purposes. These include Google Analytics.
+                </p>
+            </h3>
+            
+            <div class="switch">
+              <label class="switch">
+                <input type="checkbox" id="blockTrackScript" name="blockTrackScript">
+                <span class="slider"></span>
+              </label>
+            </div>
+        </div>
+        
+        <div class="setting">
+                    
+            <h3>Block Advertisements
+              <p>
+                  This option will block all advertisement scripts and prevent them from loading on your website.
+              </p>
+            </h3>
+            <div class="switch">
+              <label class="switch">
+                <input type="checkbox" id="blockAds" name="blockAds">
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        <div class="setting">
+            <h3>Smart Settings</h3>
+            <div class="switch">
+              <label class="switch">
+                <input type="checkbox" id="smart-settings" name="smart-settings">
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+       
+        </div>
+      </div>
+      <div id="privacy-tab" class="tab-pane">
+        <h2>Privacy Settings
+            <div class="content">
+                <p id="space" class="space">
+                        space
+                </p>
+          </div>
+        </h2>
+      <div class="table">
+        <div class="setting">
+            <h3>Hide youre Client Identifier
+                <p>
+                    Your client identifier is a unique ID that identifies your device. It can be used to track you.
+                </p>
+            </h3>
+            
+            <div class="switch">
+              <label class="switch">
+                <input type="checkbox" id="hideClientIdentifier" name="hideClientIdentifier">
+                <span class="slider"></span>
+              </label>
+            </div>
+        </div>
+        <div class="setting">
+            <h3>Block Fingerprinting
+                <p>
+                    Dont let Websides access youre data to create a profile about you and track you down.
+                </p>
+            </h3>
+            
+            <div class="switch">
+              <label class="switch">
+                <input type="checkbox" id="blockFingerprinting" name="blockFingerprinting">
+                <span class="slider"></span>
+              </label>
+            </div>
+        </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0/dist/chartjs-plugin-datalabels.min.js"></script>
+  <script src="js/settings.js" nonce="random-nonce"></script>
+  <script src="js/chart.js" nonce="random-nonce"></script>
+</body>
+</html>
