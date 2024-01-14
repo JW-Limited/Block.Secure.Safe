@@ -12,7 +12,7 @@
     }
   },
   "web_accessible_resources": [
-    "settings.html"
+    "./settings.html"
   ],
   "permissions": [
     "activeTab",

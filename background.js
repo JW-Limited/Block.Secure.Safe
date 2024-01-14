@@ -37,6 +37,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 function isTrackingCookie(cookie) {
   // Check for specific properties commonly associated with tracking cookies
   const hasTrackingProperties =
+    cookie.domain.beginWith('track.') ||
     cookie.domain.endsWith('.tracker.com') ||
     cookie.name.toLowerCase().includes('tracker') ||
     cookie.name.toLowerCase().includes('ad') ||
