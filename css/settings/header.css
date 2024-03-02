@@ -1,0 +1,33 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #DDD;
+  }
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .app-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  .app-name {
+    font-size: 20px;
+    color: #333;
+    margin: 0;
+  }
+  .secondary {
+    color: #19589b;
+    margin-left: 5px;
+    margin-bottom: 10px;
+  }
+  .header-right {
+    font-size: 14px;
+    color: #777;
+  }

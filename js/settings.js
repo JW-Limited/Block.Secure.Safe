@@ -32,7 +32,6 @@ function saveCheckboxValues() {
   });
 }
 
-// Function to load checkbox values
 function loadCheckboxValues() {
   checkboxes.forEach((checkbox) => {
     const savedValue = localStorage.getItem(checkbox.id);

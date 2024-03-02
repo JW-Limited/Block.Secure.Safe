@@ -2,16 +2,22 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>BlockSecureSafe - Tracker Blocker</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="cont_index.css">
+    <title>BlockSecureSafe - Your Web Guardian</title>
+    <link rel="stylesheet" href="./css/animations.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/index_header.css">
+    <link rel="stylesheet" href="./css/index_buttons.css">
+    <link rel="stylesheet" href="./css/index_label.css">
+    <script src="/js/status_updater.js"></script>
+    <link rel="stylesheet" href="./css/status_component.css">
     <link href='https://unpkg.com/css.gg@2.0.0/icons/css/menu.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
   </head>
   <!--Header-->
   <header class="header">
     <div class="header-left">
       <img src="images/icon_big.jpg" alt="Application Icon" class="app-icon">
-      <h1 class="app-name">BlockSecureSafe
+      <h1 class="app-name">Block.Secure.Safe.</h1>
         <small class="space">(Beta)klkl </small>
       </h1>
       <div class="header-right">
@@ -23,6 +29,13 @@
   </header>
     <!--Body-->
   <body>
+    <div class="status-container">
+      <div class="status-row">
+        <i class="fas fa-shield-alt status-icon"></i>
+        <span class="status-label" id="status-label-id">Side Focused</span> </div>
+      <div class="status-description">
+        <p>All safe and sound.</p> </div>
+    </div>
     <div class="container">
       <div class="content">
         <p>Protect your privacy by blocking trackers on websites.</p>
@@ -30,10 +43,12 @@
       <div class="user-info">
         <div class="options">
           <input type="checkbox" class="button primary" id="toggleButton2">
-          <label for="toggleButton2">Toggle</label>
+          <label for="toggleButton2">Toggle
+            <i class="fas fa-shield-alt"></i> </div>
+          </label>
         </div>
       </div>
     </div>
-    <script src="js/popup.js" nonce="random-nonce"></script>
+    <script src="/js/popup.js" nonce="random-nonce"></script>
   </body>
 </html>

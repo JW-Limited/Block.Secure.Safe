@@ -1,0 +1,50 @@
+.about-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 40px;
+  }
+  
+  .company-icon {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .author-info {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .author-info p {
+    font-size: 16px;
+    color: #333;
+    margin: 5px 0;
+  }
+  
+
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+
+  .table {
+    display: grid;
+    grid-template-columns: 1fr ;
+    grid-gap: 12px;
+  }
+  
+  .table h3 {
+    margin: 0;
+  }
+
+    
+  .table .setting {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }

@@ -1,0 +1,33 @@
+.tab-bar {
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #DDD;
+  }
+  
+  .tab {
+    animation: slideDown;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .tab.active {
+    background-color: #0078D7;
+    color: #FFF;
+  }
+  
+  .tab-content {
+    animation: slideDown;
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .tab-pane {
+    display: none;
+  }
+  
+  .tab-pane.active {
+    display: block;
+  }

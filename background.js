@@ -1,28 +1,41 @@
 // Listen for changes in the protection state
-chrome.storage.local.onChanged.addListener(function(changes) {
+chrome.storage.local.onChanged.addListener(function(changes) 
+{
   var protectionEnabled = changes.protectionEnabled.newValue;
-  if (protectionEnabled) {
+  if (protectionEnabled) 
+  {
     enableProtection();
-  } else {
+  } 
+  else 
+  {
     disableProtection();
   }
 });
 
-chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-  if (request.action === 'deleteAllCookies') {
-    chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) 
+{
+  if (request.action === 'deleteAllCookies') 
+  {
+    chrome.tabs.query({ active: true, currentWindow: true }, function(tabs)
+   {
       const activeTab = tabs[0];
-      if (activeTab) {
-        chrome.cookies.getAll({ url: activeTab.url }, function(cookies) {
-          for (var i = 0; i < cookies.length; i++) {
+      if (activeTab) 
+      {
+        chrome.cookies.getAll({ url: activeTab.url }, function(cookies) 
+        {
+          for (var i = 0; i < cookies.length; i++) 
+          {
             const cookie = cookies[i];
             // Check if the cookie is a tracking cookie
-            if (isTrackingCookie(cookie)) {
-              const details = {
+            if (isTrackingCookie(cookie)) 
+            {
+              const details = 
+              {
                 url: cookie.secure ? `https://${cookie.domain}${cookie.path}` : `http://${cookie.domain}${cookie.path}`,
                 name: cookie.name
               };
-              chrome.cookies.remove(details, function(removedCookie) {
+              chrome.cookies.remove(details, function(removedCookie) 
+              {
                 console.log("Removed cookie:", removedCookie);
               });
             }
@@ -33,9 +46,20 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   }
 });
 
-// Helper function to determine if a cookie is a tracking cookie
-function isTrackingCookie(cookie) {
-  // Check for specific properties commonly associated with tracking cookies
+chrome.runtime.onMessage.addListener(function(request) 
+{
+  if (request.message === "getURL") 
+  {
+    chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) 
+    {
+      const url = tabs[0].url;
+      chrome.runtime.sendMessage({ url });
+    });
+  }
+});
+
+function isTrackingCookie(cookie) 
+{
   const hasTrackingProperties =
     cookie.domain.beginWith('track.') ||
     cookie.domain.endsWith('.tracker.com') ||
@@ -50,29 +74,25 @@ function isTrackingCookie(cookie) {
   return hasTrackingProperties;
 }
 
-function urlMatchesPattern(url, pattern) {
+function urlMatchesPattern(url, pattern) 
+{
   const regex = new RegExp(pattern);
   return regex.test(url);
 }
 
-// Helper function to modify headers in the request
 function modifyRequestHeaders(details) {
   const headers = details.requestHeaders;
-
-  // Modify headers as needed
-  // For example, you can add or remove headers
-  // Here, we add a custom header named "BlockSecureSafe" with the value "enabled"
   headers.push({ name: "BlockSecureSafe", value: "enabled" });
 
   return { requestHeaders: headers };
 }
 
-// Enable the protection
-function enableProtection() {
-  
+function enableProtection() 
+{
   chrome.webRequest.onBeforeRequest.addListener(
     function (details) {
-      if (details.url.startsWith('http://')) {
+      if (details.url.startsWith('http://')) 
+      {
         const httpsURL = details.url.replace('http://', 'https://');
         console.log("upgraded to https")
         return { redirectUrl: httpsURL };
@@ -84,9 +104,11 @@ function enableProtection() {
   );
 
   chrome.webRequest.onBeforeSendHeaders.addListener(
-    function (details) {
+    function (details) 
+    {
       // Check if the protection is enabled
-      chrome.storage.local.get("protectionEnabled", function (result) {
+      chrome.storage.local.get("protectionEnabled", function (result) 
+      {
         const protectionEnabled = result.protectionEnabled;
 
         if (protectionEnabled) {
@@ -101,18 +123,23 @@ function enableProtection() {
 
   // Block specific requests based on URL patterns
   chrome.webRequest.onBeforeRequest.addListener(
-    function (details) {
+    function (details) 
+    {
       // Check if the protection is enabled
-      chrome.storage.local.get("protectionEnabled", function (result) {
+      chrome.storage.local.get("protectionEnabled", function (result) 
+      {
         const protectionEnabled = result.protectionEnabled;
 
         if (protectionEnabled) {
           // Check if the request URL matches a pattern to block 
           const url = details.url;
-          if (urlMatchesPattern(url, "example.com/trackers")) {
+          if (urlMatchesPattern(url, "example.com/trackers")) 
+          {
             // Remove cookies for the matching URL
-            chrome.cookies.getAll({ url }, function (cookies) {
-              cookies.forEach(function (cookie) {
+            chrome.cookies.getAll({ url }, function (cookies)
+            {
+              cookies.forEach(function (cookie) 
+              {
                 chrome.cookies.remove({ url: cookie.url, name: cookie.name });
               });
             });
@@ -126,26 +153,24 @@ function enableProtection() {
   );
 };
 
-// Disable the protection
-function disableProtection() {
-  // Remove the onBeforeSendHeaders listener
+function disableProtection() 
+{
   chrome.webRequest.onBeforeSendHeaders.removeListener(modifyRequestHeaders);
 
-  // Remove the onBeforeRequest listener
   chrome.webRequest.onBeforeRequest.removeListener(blockTracker);
 }
 
-// Block tracker requests
-function blockTracker(details) {
+function blockTracker(details) 
+{
   return { cancel: true };
 }
 
-// Set up the listeners when the extension is installed or updated
-chrome.runtime.onInstalled.addListener(function() {
+chrome.runtime.onInstalled.addListener(function() 
+{
   enableProtection();
 });
 
-// Set up the listeners when the extension is started
-chrome.runtime.onStartup.addListener(function() {
+chrome.runtime.onStartup.addListener(function() 
+{
   enableProtection();
 });

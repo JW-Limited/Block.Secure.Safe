@@ -1,5 +1,7 @@
 // content.js
 
+
+
 // Function to delete all cookies for the current site
 function deleteAllCookies() {
     chrome.runtime.sendMessage({ action: 'deleteAllCookies' });

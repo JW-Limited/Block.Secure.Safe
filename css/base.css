@@ -1,0 +1,61 @@
+body {
+    font-family: Segoe UI, Arial, sans-serif;
+    background: rgba(255, 255, 255, 0.9);
+  }
+  h1 {
+    font-size: 24px;
+    color: #333;
+    margin: 0;
+  }
+  
+  p {
+    font-size: 15px;
+    color: #777;
+    margin: 0 0 20px;
+  }
+  
+  .space {
+    font-size: 12px;
+    color: #ffffff;
+  }
+  body {
+    font-family: Segoe UI, Arial, sans-serif;
+    background: rgba(255, 255, 255, 0.9)
+  }
+  .container {
+    margin: 5px auto;
+    background-color:  rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    margin-top: 0 2px 8px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    animation: fadeIn 0.5s ease;
+    position: relative; /* Add this line */
+  }
+  
+  .container:before,
+  .container:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2); /* Line color */
+  }
+  
+  .container:after {  
+    top: unset;
+    bottom: 0;
+  }
+  .options {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .options i {
+    font-size: 20px;
+    color: #333; /* Adjust color based on your branding */
+  }
+  

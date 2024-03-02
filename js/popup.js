@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var settingsButton = document.getElementById('settingsButton');
   
   settingsButton.addEventListener('click', function() {
-    chrome.tabs.create({ url: 'settings.html' });
+    chrome.tabs.create({ url: './settings.html' });
   });
 });
 

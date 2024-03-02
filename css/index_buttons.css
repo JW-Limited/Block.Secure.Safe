@@ -1,0 +1,35 @@
+.button {
+    border: none;
+    border-radius: 4px;
+    padding: 12px 20px;
+    font-size: 14px;
+    height: 34px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    animation: slideIn 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+  }
+    .button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: gray;
+  }
+  
+  .button.secondary:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  
+  .button.enabled {
+    background-color: #E81123;
+  }
+  
+  .button.enabled:hover {
+    background-color: #B3000A;
+  }
+  
+  .button:focus {
+    outline: none;
+  }
+  
