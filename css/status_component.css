@@ -10,22 +10,29 @@
   .status-row {
     display: flex;
     align-items: center;
+    gap: 5px; 
   }
   
   .status-icon {
-    font-size: 20px;
-    color: #333;
+    font-size: 18px;
+    color: #0052a9;
     margin-right: 10px;
   }
   
   .status-label {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold; /* Make status label bolder */
     color: #333;
   }
   
   .status-description {
-    font-size: 12px;
+    font-size: 10px;
     color: #777;
+  }
+
+  .status-separator {
+    font-size: 20px;
+    font-weight: lighter; /* Adjust weight for visibility */
+    color: #333; /* Adjust color to match your design */
   }
   

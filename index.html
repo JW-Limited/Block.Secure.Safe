@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/index_header.css">
     <link rel="stylesheet" href="./css/index_buttons.css">
     <link rel="stylesheet" href="./css/index_label.css">
+    <link rel="stylesheet" href="./css/index_button_container.css">
     <script src="/js/status_updater.js"></script>
     <link rel="stylesheet" href="./css/status_component.css">
     <link href='https://unpkg.com/css.gg@2.0.0/icons/css/menu.css' rel='stylesheet'>
@@ -32,13 +33,14 @@
     <div class="status-container">
       <div class="status-row">
         <i class="fas fa-shield-alt status-icon"></i>
+        <span class="status-separator">|</span>&nbsp;
         <span class="status-label" id="status-label-id">Side Focused</span> </div>
       <div class="status-description">
         <p>All safe and sound.</p> </div>
     </div>
     <div class="container">
-      <div class="content">
-        <p>Protect your privacy by blocking trackers on websites.</p>
+      <div class="p-action">
+        <p>No Trackers. Lets Secure and Explore.</p>
       </div>
       <div class="user-info">
         <div class="options">
@@ -47,6 +49,21 @@
             <i class="fas fa-shield-alt"></i> </div>
           </label>
         </div>
+      </div>
+    </div>
+    <div class="button-container">
+      <div class="button-panel">
+        <i class="fas fa-pause-circle"></i>
+        <p>30 Sekunden Pause</p>
+      </div>
+      <div class="button-seperator"></div>
+      <div class="button-panel">
+        <i class="fas fa-filter"></i>
+        <p>Öffne Filterprotokoll</p>
+      </div>
+      <div class="button-panel">
+        <i class="fas fa-exclamation-triangle"></i>
+        <p>Melde ein Problem</p>
       </div>
     </div>
     <script src="/js/popup.js" nonce="random-nonce"></script>

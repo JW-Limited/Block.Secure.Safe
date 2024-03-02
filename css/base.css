@@ -25,19 +25,24 @@ body {
   .container {
     margin: 5px auto;
     background-color:  rgba(255, 255, 255, 0.9);
-    border-radius: 8px;
     margin-top: 0 2px 8px rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
-    padding: 20px;
+    border-bottom: 1px solid #DDD;
+    padding-top: 20px;
+    padding-left: 20px;
+    gap:10px;
     animation: fadeIn 0.5s ease;
     position: relative; /* Add this line */
+    display: flex; /* Make the container a flexbox */
+    align-items: center;
   }
   
   .container:before,
   .container:after {
     content: "";
     position: absolute;
+    justify-content: space-between;
     top: 0;
     left: 10%;
     right: 10%;
@@ -50,10 +55,14 @@ body {
     bottom: 0;
   }
   .options {
+    align-self: right;
     display: flex;
     justify-content: center;
   }
-  
+  .p-action{
+    margin-top: 17px;
+    margin-right: 13x;
+  }
   .options i {
     font-size: 20px;
     color: #333; /* Adjust color based on your branding */
