@@ -7,15 +7,16 @@
   <link rel="stylesheet" href="css/settings/base.css">
   <link rel="stylesheet" href="css/settings/header.css">
   <link rel="stylesheet" href="css/settings/tabbar.css">
+  <link rel="stylesheet" href="css/settings/settings_table.css">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/ios_style_switch.css">
+  <link rel="stylesheet" href="css/cookie_graph.css">
 </head>
 <body>
   <header class="header">
     <div class="header-left">
       <img src="images/icon_big.jpg" alt="Application Icon" class="app-icon">
-      <h1 class="app-name">BlockSecureSafe
-        <small class="secondary">(Beta)</small>
+      <h1 class="app-name">Block.Secure.Safe.
       </h1>
     </div>
     <div class="header-right">
@@ -32,7 +33,6 @@
       <div class="tab" data-target="about-tab">About</div>
       <div class="tab" data-target="tab"></div>
     </div>
-    
     <div class="tab-content">
         <div id="about-tab" class="tab-pane">
             <h2>About
@@ -44,33 +44,35 @@
             </h2>
                 <div class="author-info">
                   <img src="images/icon_big.jpg" alt="Company Icon" class="company-icon">
-                  <p>Version: 1.2.0</p>
+                  <p>Version: 0.2.3</p>
                   <p>Author: Joey West</p>
                   <p>Company: JW Limited</p>
                   <p>Made with LOVE in Germany</p>
                 </div>
               </div>
         <div id="general-tab" class="tab-pane active">
-        <h2>General Settings
+          <h2>General Settings </h2>
+            
+          
+          
             <div class="content">
-                <p id="space" class="space">
-                        space
-                </p>
-                <p class="developer">Youre Data
-                  <small>(Beta)</small>
-                </p>
                 <div class="chart-container">
                   <canvas id="chartCanvas" class="chart-canvas"></canvas>
                 </div>
-          </div>
-         </h2>
-         <p id="space" class="space">
-          space
+                <div class="disclaimer">
+                  <p>Disclaimer: This data can be uncorrect or manipulated so JW Limited wont valid this report.</p>
+                </div>
+                <p id="space" class="space">
+                  space
           </p>
+          </div>
+          <div class="headline">
+            <p>Quick Settings</p>
+          </div>
           <div class="table">
             <div class="setting">
               <h3>Block Social Media Tracking
-                <p class="developer">
+                <p class="settings-description">
                     Blocking social media tracking can help protect your privacy and security online, as it prevents the websites.
                 </p>
               </h3>
@@ -83,7 +85,7 @@
             </div>
             <div class="setting">
               <h3>Block Third-Party Cookies
-                <p>
+                <p class="settings-description">
                     This option will block all third party Cookies that are used for tracking purposes.
                 </p>
               </h3>
@@ -98,7 +100,7 @@
                 
           <div class="setting">
             <h3>Block Tracking Scripts
-                <p>
+                <p class="settings-description">
                     This option will block all third party scripts that are used for tracking purposes. These include Google Analytics.
                 </p>
             </h3>
@@ -112,9 +114,8 @@
         </div>
         
         <div class="setting">
-                    
             <h3>Block Advertisements
-              <p>
+              <p class="settings-description">
                   This option will block all advertisement scripts and prevent them from loading on your website.
               </p>
             </h3>
@@ -125,8 +126,12 @@
               </label>
             </div>
           </div>
-        <div class="setting">
-            <h3>Smart Settings</h3>
+        <div class="setting smart-attribute">
+            <h3>Smart Settings
+              <p class="settings-description">
+                This option will automaticly decide what to do on each Wesbide.
+            </p>
+            </h3>
             <div class="switch">
               <label class="switch">
                 <input type="checkbox" id="smart-settings" name="smart-settings">
@@ -147,8 +152,8 @@
         </h2>
       <div class="table">
         <div class="setting">
-            <h3>Hide youre Client Identifier
-                <p>
+            <h3 class="settings-title">Hide youre Client Identifier
+               <p class="settings-description">
                     Your client identifier is a unique ID that identifies your device. It can be used to track you.
                 </p>
             </h3>
@@ -162,7 +167,7 @@
         </div>
         <div class="setting">
             <h3>Block Fingerprinting
-                <p>
+                <p class="settings-description">
                     Dont let Websides access youre data to create a profile about you and track you down.
                 </p>
             </h3>

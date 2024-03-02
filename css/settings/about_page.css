@@ -31,20 +31,3 @@
     border-radius: 50%;
   }
 
-
-  .table {
-    display: grid;
-    grid-template-columns: 1fr ;
-    grid-gap: 12px;
-  }
-  
-  .table h3 {
-    margin: 0;
-  }
-
-    
-  .table .setting {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }

@@ -21,10 +21,18 @@
     "cookies",
     "webRequest",
     "webRequestBlocking",
-    "storage"
+    "storage",
+    "contextMenus",
+    "downloads", 
+    "nativeMessaging", 
+    "alarms", 
+    "declarativeNetRequest"
   ],
+  "minimum_chrome_version": "107.0",
+  "optional_permissions": [ "history", "bookmarks" ],
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "background.js",
+    "type": "module"
   },
   "content_scripts": [
     {

@@ -13,7 +13,7 @@
     padding-right: 10px;
     border-radius: 8px;
     cursor: pointer; /* Indicate hover/click interaction */
-    transition: all 0.2s ease-in-out; /* Add subtle hover effect */
+    transition: all 0.4s ease-in-out; /* Add subtle hover effect */
   }
   
   .button-panel:hover {
@@ -25,11 +25,23 @@
     margin-top: 10px;
     color: #3f45e8;
   }
+
+  .pause i {
+    color: #706e6e;
+  }
+
+ .filter i{
+    color: #4779aa;
+ }
+
+ .problem i{
+    color: #8c7919;
+ }
   
   .button-panel p {
     margin-top: 10px;
     font-size: 14px;
-    color: #120943;
+    color: #171717;
   }
   .button-seperator{
     align-self: center;
